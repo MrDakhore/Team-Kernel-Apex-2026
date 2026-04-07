@@ -1,4 +1,4 @@
-# GUI & Telemetry Logic
+# GUI Logic
 
 The GUI module renders a custom OpenCV Mission Analytics Dashboard to provide operators and judges with real-time insight into the drone's autonomous processes.
 

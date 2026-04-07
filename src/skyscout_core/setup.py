@@ -26,9 +26,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'perception_node = skyscout_core.perception_node:main',
-            'decision_node = skyscout_core.decision_node:main',
-            'execution_node = skyscout_core.execution_node:main',
             'disaster_detection_node = skyscout_core.disaster_detection_node:main',
             'precision_align_node = skyscout_core.precision_align_node:main',
         ],
