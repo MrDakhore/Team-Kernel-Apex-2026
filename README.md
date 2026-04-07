@@ -61,10 +61,12 @@ SkyScout/
         │   └── skyscout_sim.launch.py
         ├── config/          
         │   └── drone_params.yaml
-        └── skyscout_core/   
-            ├── perception_node.py   # YOLO vision logic
-            ├── decision_node.py     # Closed-loop control & math
-            └── execution_node.py    # MAVROS communication & payload# Team-Kernel-Apex-2026
+        └── └── skyscout_core/   
+            ├── perception_node.py          # YOLO vision logic
+            ├── decision_node.py            # Closed-loop control & math
+            ├── execution_node.py           # MAVROS communication & payload
+            └── disaster_detection_node.py  # MobileViT disaster classification
+
 ```
 git clone https://github.com/yourusername/SkyScout.git
 cd SkyScout
