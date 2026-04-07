@@ -1,0 +1,20 @@
+# ROS 2 Build/Install Folders
+build/
+install/
+log/
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Large models or datasets (Upload models separately or via Git LFS if over 100MB)
+*.pt
+*.onnx
