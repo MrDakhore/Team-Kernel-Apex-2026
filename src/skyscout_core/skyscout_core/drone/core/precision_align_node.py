@@ -27,18 +27,7 @@ import time
 import numpy as np
 
 
-# ========== CONFIG ==========
-ALT_HOLD = 5.0
-K_PIX2M = 0.0085
-MAX_DELTA = 0.5
-LAND_ERROR_PIX = 20 
-REQUIRED_GOOD_FRAMES = 12
-AVG_WINDOW = 5
-DEAD_BAND = 5
-SMOOTH_FACTOR = 0.65
-DETECT_HOLD_TIME = 1.0
-PUBLISH_HZ = 10.0
-# ============================
+
 
 
 

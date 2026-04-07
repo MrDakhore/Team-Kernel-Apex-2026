@@ -1,0 +1,27 @@
+/**:
+  ros__parameters:
+    # ==========================================
+    # FLIGHT DYNAMICS & CONTROL TUNING
+    # ==========================================
+    alt_hold_meters: 5.0            # Altitude to maintain during alignment
+    k_pix_to_meter: 0.0085          # Conversion gain from pixel error to physical movement
+    max_delta_meters: 0.5           # Maximum allowed drone movement per frame (speed limit)
+    smooth_factor: 0.65             # Low-pass filter weight for smooth flight
+    publish_hz: 10.0                # Command loop frequency
+
+    # ==========================================
+    # TARGETING & ALIGNMENT LOGIC
+    # ==========================================
+    land_error_pix: 20              # Max pixel offset from center to be considered "Aligned"
+    dead_band_pix: 5                # Ignore movements smaller than this (prevents jitter)
+    avg_window_frames: 5            # Number of frames to average for noise reduction
+    required_good_frames: 12        # Sequential frames needed before dropping payload
+    detect_hold_time_sec: 1.0       # Time to wait after initial detection before engaging
+
+    # ==========================================
+    # AI & PERCEPTION THRESHOLDS
+    # ==========================================
+    yolo_confidence_threshold: 0.70 # Minimum confidence for YOLO helipad detection
+    mobilevit_confidence_req: 0.85  # Minimum confidence for Disaster detection classification
+    
+    
