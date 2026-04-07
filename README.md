@@ -65,8 +65,8 @@ SkyScout/
             ├── perception_node.py          # YOLO vision logic
             ├── decision_node.py            # Closed-loop control & math
             ├── execution_node.py           # MAVROS communication & payload
-            └── disaster_detection_node.py  # MobileViT disaster classification
-
+            ├── disaster_detection_node.py  # MobileViT disaster classification
+            └── precision_align_node.py     # Integrated alignment & landing HUD
 ```
 git clone https://github.com/yourusername/SkyScout.git
 cd SkyScout
