@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<sdf version="1.8">
+  <world name="disaster_environment">
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+  </world>
+</sdf>
