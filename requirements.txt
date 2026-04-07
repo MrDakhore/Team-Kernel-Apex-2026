@@ -1,0 +1,9 @@
+# SkyScout Python Dependencies
+# YOLOv8 for disaster detection vision processing
+ultralytics>=8.0.0
+
+# OpenCV for bridging ROS image messages to YOLO
+opencv-python>=4.8.0
+
+# Numpy for array and bounding box math calculations
+numpy>=1.24.0
