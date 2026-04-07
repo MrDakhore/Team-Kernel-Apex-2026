@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="collapsed_fire_station">
+    <static>true</static>
+
+    <link name="link">
+
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://collapsed_fire_station/meshes/collapsed_fire_station.dae</uri>
+            <scale>0.35 0.35 0.35</scale>
+          </mesh>
+        </geometry>
+      </collision>
+
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://collapsed_fire_station/meshes/collapsed_fire_station.dae</uri>
+            <scale>0.35 0.35 0.35</scale>
+          </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+  </model>
+</sdf>
