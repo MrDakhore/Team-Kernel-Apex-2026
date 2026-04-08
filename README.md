@@ -75,6 +75,13 @@ To achieve low-cost scalability, SkyScout is designed to run entirely on Commerc
 | **Actuator** | MG995 Servo Motor (for payload drop) |
 
 ---
+##  Fault Tolerance & Edge Cases
+
+The SkyScout architecture is designed with real-world noise and signal loss in mind. Our closed-loop control handles three critical failure conditions:
+
+* **Detection Loss Recovery:** If YOLO temporarily loses the target due to camera blur or occlusion, the drone utilizes a memory buffer to maintain its last known trajectory while aggressively retrying detection.
+* **Micro-Oscillation Damping:** We implemented a spatial deadband to filter out YOLO bounding-box jitter, preventing the drone from entering unstable feedback loops when directly over the target.
+* **False-Positive Rejection:** Payload deployment requires a multi-frame consistency lock (12 sequential frames) to guarantee alignment and prevent accidental drops on false detections.
 
 ##  Repository Structure
 ```text
