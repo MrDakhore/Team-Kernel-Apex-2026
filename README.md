@@ -120,16 +120,14 @@ SkyScout/
         │       └── gui.md
         │
         ├── worlds/                 # Gazebo Simulation Environments
-        │   ├── disaster_maps/
-        │   │   ├── city_ruins.sdf
-        │   │   └── collapsed_building.sdf
-        │   │
-        │   └── objects/
-        │       └── models_source.md
-        │
-        └── docs/
-            ├── architecture.md
-            └── pipeline.md
+            ├── disaster_maps/
+            │   ├── city_ruins.sdf
+            │   └── collapsed_building.sdf
+            │
+            └── objects/
+               └── models_source.md
+        
+        
 ```
 git clone https://github.com/yourusername/SkyScout.git
 cd SkyScout
