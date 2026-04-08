@@ -33,6 +33,35 @@ This project utilizes a highly decentralized node-based framework, allowing perc
 * **Primary Language:** Python 
 
 ---
+##  Quick Start & Execution Sequence
+
+To run the SkyScout system in the simulation environment, you will need to open multiple terminal tabs. Ensure your ROS 2 workspace is built (`colcon build`) and sourced (`source install/setup.bash`) in every new terminal.
+
+**Terminal 1: Launch Simulation & ROS Bridges**
+Start the Gazebo environment, load the custom disaster world, and initialize the camera/payload bridges.
+```bash
+ros2 launch skyscout_core system.launch.py
+```
+**Terminal 2: Initialize ArduPilot SITL**
+Boot the Software-In-The-Loop (SITL) physics flight controller for the drone.
+```bash
+sim_vehicle.py -v ArduCopter -f gazebo-iris --model JSON --map --console --mavproxy-args="--out=127.0.0.1:14551"
+```
+**Terminal 3: Start MAVROS (Communication Bridge)**
+Establish the connection between the ROS 2 network and the ArduPilot flight controller, filtering out unnecessary distance sensor warnings.
+```bash
+ros2 run mavros mavros_node --ros-args -p fcu_url:=udp://127.0.0.1:14551@14555 -p tgt_system:=1 -p tgt_component:=1 2>&1 | grep -v "mavros.distance_sensor"
+```
+Terminal 4: Launch Disaster Detection (AI Module)
+Start the YOLO/MobileViT perception node to scan the camera feed.
+```bash
+ros2 run skyscout_core disaster_detection
+```
+Terminal 5: Launch Precision Alignment (Control Module)
+Start the closed-loop control system that manages the targeting HUD, alignment, and payload deployment.
+```bash
+ros2 run skyscout_core precision_align_node
+```
 
 ##  Hardware Stack & Expected Cost (Real-World Deployment)
 To achieve low-cost scalability, SkyScout is designed to run entirely on Commercial-Off-The-Shelf (COTS) hardware. The estimated cost for a fully autonomous prototype is between **₹33,500 - ₹44,000**.
