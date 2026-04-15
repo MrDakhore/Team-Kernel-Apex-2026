@@ -1,8 +1,8 @@
-**Team:** Kernel Apex 2026
+**Team:** Wingmen
 #  SkyScout: Autonomous UAV Urban Disaster Response System
 
-Domain:Smart City 
-Status:Prototype / Hackathon Build 
+Domain: Open Innovation
+Status: Prototype 
 
 SkyScout is an Autonomous UAV Urban Disaster Response System. Built on open-source architecture while leveraging industry-grade systems, it provides a cost-effective and scalable solution for real-world deployment.
 
@@ -11,7 +11,7 @@ SkyScout is an Autonomous UAV Urban Disaster Response System. Built on open-sour
 ##  The Problem & Our Solution
 The first 60 minutes after a disaster are the most critical for saving lives and minimizing damage. Current systems rely heavily on slow human reporting and manual deployment. 
 
-SkyScout solves this by deploying an autonomous surveillance drone that continuously monitors urban areas using onboard sensors and cameras. It uses AI/ML algorithms to detect disasters such as fires, smoke, or structural damage. Once detected, the system automatically identifies the exact location, navigates to the affected area, and performs immediate rapid response actions like dropping emergency medical kits.
+SkyScout solves this by deploying an autonomous surveillance drone that continuously monitors target areas using onboard sensors and cameras. It uses AI/ML algorithms to detect fires, flood and structural damage. Once detected, the system automatically identifies the exact location, navigates to the affected area, and performs immediate rapid response actions like dropping emergency medical kits.
 
 ---
 
@@ -33,8 +33,23 @@ This project utilizes a highly decentralized node-based framework, allowing perc
 * **Primary Language:** Python 
 
 ---
-##  Quick Start & Execution Sequence
 
+##  Demonstration
+photo drone
+photo disaster site
+photo detection (drone's feed)
+video hover
+---
+
+##  Quick Start & Execution Sequence
+```bash
+git clone https://github.com/yourusername/SkyScout.git
+cd SkyScout
+pip install -r requirements.txt
+cd src
+colcon build --symlink-install
+source install/setup.bash
+```
 To run the SkyScout system in the simulation environment, you will need to open multiple terminal tabs. Ensure your ROS 2 workspace is built (`colcon build`) and sourced (`source install/setup.bash`) in every new terminal.
 
 **Terminal 1: Launch Simulation & ROS Bridges**
@@ -82,68 +97,4 @@ The SkyScout architecture is designed with real-world noise and signal loss in m
 * **Detection Loss Recovery:** If YOLO temporarily loses the target due to camera blur or occlusion, the drone utilizes a memory buffer to maintain its last known trajectory while aggressively retrying detection.
 * **Micro-Oscillation Damping:** We implemented a spatial deadband to filter out YOLO bounding-box jitter, preventing the drone from entering unstable feedback loops when directly over the target.
 * **False-Positive Rejection:** Payload deployment requires a multi-frame consistency lock (12 sequential frames) to guarantee alignment and prevent accidental drops on false detections.
-
-##  Repository Structure
-```text
-SkyScout/
-│
-├── README.md
-├── LICENSE
-├── requirements.txt
-├── .gitignore
-│
-├── assets/
-│   └── architecture.png
-│
-├── models/
-│   ├── target.pt                   # YOLO alignment model
-│   └── disaster.pth                # MobileViT classification model
-│
-└── src/
-    └── skyscout_core/
-        ├── setup.py                # ROS 2 package build instructions
-        ├── package.xml             # ROS 2 package dependencies
-        │
-        ├── launch/
-        │   └── system.launch.py    # Master startup file for Gazebo & Nodes
-        │
-        ├── config/
-        │   └── drone_params.yaml   # Centralized tuning variables
-        │
-        ├── drone/                  # Core Python Executables
-        │   ├── __init__.py
-        │   ├── core/
-        │   │   ├── __init__.py
-        │   │   └── precision_align_node.py
-        │   │
-        │   ├── detection/
-        │   │   ├── __init__.py
-        │   │   └── disaster_detection.py
-        │   │
-        │   └── logic/              # System Architecture Documentation
-        │       ├── perception.md
-        │       ├── decision.md
-        │       ├── execution.md
-        │       └── gui.md
-        │
-        ├── worlds/                 # Gazebo Simulation Environments
-            ├── disaster_maps/
-            │   ├── city_ruins.sdf
-            │   └── collapsed_building.sdf
-            │
-            └── objects/
-               └── models_source.md
-        
-        
-```
-git clone https://github.com/yourusername/SkyScout.git
-cd SkyScout
-
-pip install -r requirements.txt
-  
-cd src
-colcon build --symlink-install
-source install/setup.bash
-
-# Launch the Gazebo digital twin and the ROS 2 control nodes
-ros2 launch skyscout_core skyscout_sim.launch.py
+---
