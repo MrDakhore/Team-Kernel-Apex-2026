@@ -34,10 +34,19 @@ This project utilizes a highly decentralized node-based framework, allowing perc
 ---
 
 ##  Demonstration
-[The Drone](images/setup.png)
-photo disaster site
-photo detection (drone's feed)
-video hover
+
+This is the Ardupilot drone which we will be using for the simulation.
+
+![Drone image](IMG-20260415-WA0011.jpg)
+
+Disaster site and dashboard
+
+![Drone image](IMG-20260415-WA0013.jpg)
+
+Detection on the disaster site
+
+![Drone image](IMG-20260415-WA0007.jpg)
+
 ---
 
 ##  Quick Start & Execution Sequence
