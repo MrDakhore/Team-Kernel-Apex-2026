@@ -1,8 +1,7 @@
 **Team:** Wingmen
 #  SkyScout: Autonomous UAV Urban Disaster Response System
 
-Domain: Open Innovation
-Status: Prototype 
+Domain: Open Innovation Status: Prototype 
 
 SkyScout is an Autonomous UAV Urban Disaster Response System. Built on open-source architecture while leveraging industry-grade systems, it provides a cost-effective and scalable solution for real-world deployment.
 
@@ -35,13 +34,30 @@ This project utilizes a highly decentralized node-based framework, allowing perc
 ---
 
 ##  Demonstration
-photo drone
+[The Drone](images/setup.png)
 photo disaster site
 photo detection (drone's feed)
 video hover
 ---
 
 ##  Quick Start & Execution Sequence
+First make sure you are using Ubuntu 22.04
+and have ROS2 Humble installed, if not you check the [documentation](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) for installation.
+Similiarly you also need to download and install:
+
+[Ardupilot](https://ardupilot.org/dev/docs/building-setup-linux.html)
+
+[Gazebo Harmonic](https://gazebosim.org/docs/harmonic/install_ubuntu/#binary-installation-on-ubuntu)
+
+[QGC](https://docs.qgroundcontrol.com/master/en/qgc-user-guide/getting_started/download_and_install.html#ubuntu)
+
+and Mavros
+```bash
+sudo apt update
+sudo apt install ros-humble-mavros ros-humble-mavros-extras
+sudo /opt/ros/humble/lib/mavros/install_geographiclib_datasets.sh
+```
+After having these softwares
 ```bash
 git clone https://github.com/yourusername/SkyScout.git
 cd SkyScout
@@ -50,6 +66,7 @@ cd src
 colcon build --symlink-install
 source install/setup.bash
 ```
+Now
 To run the SkyScout system in the simulation environment, you will need to open multiple terminal tabs. Ensure your ROS 2 workspace is built (`colcon build`) and sourced (`source install/setup.bash`) in every new terminal.
 
 **Terminal 1: Launch Simulation & ROS Bridges**
