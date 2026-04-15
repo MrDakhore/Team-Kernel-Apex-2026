@@ -52,7 +52,7 @@ Detection on the disaster site
 ##  Quick Start & Execution Sequence
 First make sure you are using Ubuntu 22.04
 and have ROS2 Humble installed, if not you check the [documentation](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html) for installation.
-Similiarly you also need to download and install:
+Similarly you also need to download and install:
 
 [Ardupilot](https://ardupilot.org/dev/docs/building-setup-linux.html)
 
